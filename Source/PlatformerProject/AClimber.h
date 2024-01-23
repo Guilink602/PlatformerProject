@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputAction.h"
+#include "Camera/CameraComponent.h"
 #include "AClimber.generated.h"
 
 UCLASS()
@@ -15,6 +16,8 @@ class PLATFORMERPROJECT_API AAClimber : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AAClimber();
+
+
 
 	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
 		UInputMappingContext* inputMappingContext;
@@ -41,6 +44,14 @@ protected:
 
 	/** Called for grappling input */
 	void Grappling(const FInputActionValue& Value);
+
+	UPROPERTY(EditAnywhere, Category = "Camera")
+		class USpringArmComponent* SpringArmComp;
+
+	UPROPERTY(EditAnywhere, Category = "Camera")
+		class UCameraComponent* CameraComp;
+
+
 
 
 public:	
